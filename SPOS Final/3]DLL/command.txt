@@ -1,0 +1,9 @@
+admin1@admin1:~/shubha/B1$ javac B1.java
+admin1@admin1:~/shubha/B11$ javah -classpath . B1
+admin1@admin1:~/shubha/B11$ ls
+B1.c  B1.c~  B1.class  B1.h  B1.java
+admin1@admin1:~/shubha/B11$ gcc -shared -fPIC -I/usr/lib/jvm/default-java/include -I/usr/lib/jvm/default-java/include/linux B1.c -o libB1.so
+admin1@admin1:~/shubha/B11$ ls
+B1.c  B1.c~  B1.class  B1.h  B1.java  libB1.so
+admin1@admin1:~/shubha/B11$ java -classpath . -Djava.library.path=. B1
+Hello World!
